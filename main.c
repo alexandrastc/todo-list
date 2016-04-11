@@ -21,7 +21,7 @@ int main()
 	
 	int choice = getchar();
 
-	while (choice != '6'){
+	while (choice != '9'){
 	
 		switch (choice){
 			case '1':add_task(head,1,"Wubba","Lubba Dub Dub");
@@ -37,13 +37,19 @@ int main()
 				break;
 			case '6': break;
 				break;
+			case '7': break;
+				break;
+			case '8': break;
+				break;
+			case '9': break;
+				break;
 			default: 
-				printf("\nPlease enter your choice (1 to 6).\n");
+				printf("\nPlease enter your choice (1 to 9).\n");
 		}
 		
 		choice = getchar();
 		
-		if (choice != '6'){
+		if (choice != '9'){
 		
 			menu();
 		
