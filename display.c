@@ -10,6 +10,9 @@ void menu()
 	printf("\n\t3.Display by category");
 	printf("\n\t4.Sort by priority");
 	printf("\n\t5.Delete task");
-	printf("\n\t6.Quit\n\n\n");
+	printf("\n\t6.Create category");
+	printf("\n\t7.Modify category");
+	printf("\n\t8.Delete category");
+	printf("\n\t9.Quit\n\n\n");
 
 }
