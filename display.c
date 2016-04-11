@@ -12,6 +12,4 @@ void menu()
 	printf("\n\t5.Delete task");
 	printf("\n\t6.Quit\n\n\n");
 
-	printf("Your choice : ");
-
 }
