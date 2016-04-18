@@ -44,3 +44,30 @@ void print_all(NODE *head)
 		
 	}
 }
+
+void print_by_categ(NODE *head, char *categ)
+{
+	if (head->next == NULL){
+
+		printf("The list is empty.\n");
+	
+	} else {
+
+		NODE *current = head;
+
+		do{
+			
+			if(strcmp(current->next->category,categ) == 0){
+			
+				current = current->next;
+				printf("Priority: %d \n", current->priority);
+				printf("Category: %s \n", current->category);
+				printf("Task: %s\n\n", current->task);
+			
+			}
+
+		} while (current->next != NULL);
+		printf("\n");
+		
+	}
+}
