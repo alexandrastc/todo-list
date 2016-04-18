@@ -1,6 +1,17 @@
-#ifndef _DISPLAY_H_
-#define _DISPLAY_H_ 
+ #ifndef _LIST_H_
+#define _LIST_H_ 
 
-	void menu();
+typedef struct NOD{
+	
+	int priority;
+	char* category;
+	char* task; 
+	struct NOD *next;
 
-#endif
+} NODE;
+
+	void add_task(NODE *head, int p, char *c, char *t);
+	void print_all(NODE *head);	
+	void print_by_categ(NODE *head, char *categ);
+
+#endif 
