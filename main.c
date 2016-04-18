@@ -21,28 +21,36 @@ int main()
 	
 	int choice = getchar();
 
-	while (choice != '9'){
+	while (choice != '9' ){
 	
 		switch (choice){
-			case '1':add_task(head,1,"Wubba","Lubba Dub Dub");
+			
+			case '1':
+					 add_task(head,1,"wubba","lubba dub dub");
 					 printf("Task added.\n");
 				break;
+			
 			case '2':print_all(head);
 				break;
-			case '3':;
+			
+			case '3':print_by_categ(head,"wubba");
 				break;
+			
 			case '4':;
 				break;
+			
 			case '5':;
 				break;
+			
 			case '6': break;
 				break;
+			
 			case '7': break;
 				break;
+			
 			case '8': break;
 				break;
-			case '9': break;
-				break;
+
 			default: 
 				printf("\nPlease enter your choice (1 to 9).\n");
 		}
