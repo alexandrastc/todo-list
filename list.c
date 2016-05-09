@@ -150,11 +150,44 @@ void FrontBackSplit(NODE* source, NODE** frontRef, NODE** backRef)
         		slow = slow->next;
         		fast = fast->next;
       		}
-      		
+
     	}
  
     	*frontRef = source;
     	*backRef = slow->next;
     	slow->next = NULL;
   	}
+}
+void delete_task(NODE *head,char *task){
+    
+    NODE *current;                               
+    NODE *deleted_node;                          
+    		           
+    current = head;                               
+    
+    if (current->next == NULL){
+
+		printf("The list is empty.\n");
+	
+	} else {
+
+    	while(current->next != NULL){
+    	
+    		if (strcmp(current->next->task,task) == 0){
+
+    			deleted_node=current->next;           
+    			current->next=deleted_node->next;      
+    			free(deleted_node);
+
+    		}
+    	
+    		if(current->next != NULL){
+        	
+        		current=current->next;
+    	
+    		}
+    
+   		 }
+   	}
+
 }
