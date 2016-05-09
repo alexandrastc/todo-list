@@ -55,9 +55,9 @@ void print_by_categ(NODE *head, char *categ)
 
 		NODE *current = head;
 
-		do{
-			
-			if(strcmp(current->next->category,categ) == 0){
+		while (current->next != NULL){
+		
+			if (strcmp(current->next->category,categ) == 0){
 			
 				current = current->next;
 				printf("Priority: %d \n", current->priority);
@@ -66,8 +66,95 @@ void print_by_categ(NODE *head, char *categ)
 			
 			}
 
-		} while (current->next != NULL);
+			if (current->next != NULL){
+
+				current = current->next;
+			}
+
+		}
 		printf("\n");
 		
 	}
+}
+void MergeSort(NODE** headRef)
+{
+  	NODE* head = *headRef;
+	NODE* a;
+	NODE* b;
+ 
+  	if ((head == NULL) || (head->next == NULL)){
+
+    	return;
+  	
+  	}
+ 
+ 
+ 	FrontBackSplit(head, &a, &b); 
+ 
+ 
+  	MergeSort(&a);
+  	MergeSort(&b);
+ 
+  
+  	*headRef = SortedMerge(a, b);
+
+}
+NODE* SortedMerge(NODE* a, NODE* b)
+{
+	NODE* result = NULL;
+ 
+  	if (a == NULL){
+
+    	return(b);
+
+  	} else if (b==NULL){
+    	
+    	return(a);
+  	
+  	}
+
+  	if (a->priority <= b->priority){
+    	
+    	result = a;
+     	result->next = SortedMerge(a->next, b);
+
+  	} else {
+     	
+     	result = b;
+     	result->next = SortedMerge(a, b->next);
+
+  	}
+  	return(result);
+}
+void FrontBackSplit(NODE* source, NODE** frontRef, NODE** backRef)
+{
+	NODE* fast;
+	NODE* slow;
+
+  	if (source==NULL || source->next==NULL){
+
+    	*frontRef = source;
+    	*backRef = NULL;
+ 	
+ 	} else {
+    
+    	slow = source;
+    	fast = source->next;
+ 
+  
+    	while (fast != NULL){
+
+      		fast = fast->next;
+      		if (fast != NULL){
+
+        		slow = slow->next;
+        		fast = fast->next;
+      		}
+      		
+    	}
+ 
+    	*frontRef = source;
+    	*backRef = slow->next;
+    	slow->next = NULL;
+  	}
 }
