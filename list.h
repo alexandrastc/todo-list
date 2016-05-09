@@ -16,4 +16,6 @@ typedef struct NOD{
 	NODE* SortedMerge(NODE* a, NODE* b);
 	void FrontBackSplit(NODE* source, NODE** frontRef, NODE** backRef);
 	void MergeSort(NODE** headRef);
+	void delete_task(NODE *head,char *task);
+
 #endif 
