@@ -26,9 +26,7 @@ int main()
 		switch (choice){
 			
 			case '1':
-					 add_task(head,1,"wubba","lubba dub dub");
-					 add_task(head,2,"i need","a break");
-					 add_task(head,3,":(","ughhh");
+					 add_tasks(head);
 					 printf("Task added.\n");
 				break;
 			
@@ -37,7 +35,10 @@ int main()
 				break;
 			
 			case '3':
-					 print_by_categ(head,"wubba");
+					 print_by_categ(head);
+					 printf("Done. \n");
+					 menu();
+					 printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '4':
@@ -46,14 +47,24 @@ int main()
 				break;
 			
 			case '5':
-					delete_task(head,"a break");
+					delete_task(head);
 					printf("Task deleted. \n");
+					menu();
+					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
-			case '6': break;
+			case '6': 
+					modify_categ(head);
+					printf("Category modified. \n");
+					menu();
+					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
-			case '7': break;
+			case '7': 
+					delete_categ(head);
+					printf("Category deleted. \n");
+					menu();
+					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '8': break;
