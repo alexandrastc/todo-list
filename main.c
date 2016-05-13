@@ -21,6 +21,9 @@ int main()
 	
 	int choice = getchar();
 
+<<<<<<< .merge_file_X4wsJC
+<<<<<<< .merge_file_HN3HQm
+<<<<<<< .merge_file_ejtz0F
 <<<<<<< .merge_file_HznnHP
 	while (choice != '9'){
 	
@@ -47,6 +50,12 @@ int main()
 			default: 
 				printf("\nPlease enter your choice (1 to 9).\n");
 =======
+=======
+>>>>>>> .merge_file_wU4R9F
+=======
+>>>>>>> .merge_file_SYzCtl
+=======
+>>>>>>> .merge_file_YGxxRC
 	while (choice != '8' ){
 	
 		switch (choice){
@@ -87,16 +96,37 @@ int main()
 
 			default: 
 				printf("\nPlease enter your choice (1 to 8).\n");
+<<<<<<< .merge_file_X4wsJC
+<<<<<<< .merge_file_HN3HQm
+<<<<<<< .merge_file_ejtz0F
 >>>>>>> .merge_file_EbTJrP
+=======
+>>>>>>> .merge_file_wU4R9F
+=======
+>>>>>>> .merge_file_SYzCtl
+=======
+>>>>>>> .merge_file_YGxxRC
 		}
 		
 		choice = getchar();
 		
+<<<<<<< .merge_file_X4wsJC
+<<<<<<< .merge_file_HN3HQm
+<<<<<<< .merge_file_ejtz0F
 <<<<<<< .merge_file_HznnHP
 		if (choice != '9'){
 =======
 		if (choice != '8'){
 >>>>>>> .merge_file_EbTJrP
+=======
+		if (choice != '8'){
+>>>>>>> .merge_file_wU4R9F
+=======
+		if (choice != '8'){
+>>>>>>> .merge_file_SYzCtl
+=======
+		if (choice != '8'){
+>>>>>>> .merge_file_YGxxRC
 		
 			menu();
 		
