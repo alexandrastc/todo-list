@@ -11,7 +11,6 @@ typedef struct NOD{
 
 } NODE;
 
-
 	void add_tasks(NODE *head);
 	void print_all(NODE *head);	
 	void print_by_categ(NODE *head);
@@ -21,5 +20,6 @@ typedef struct NOD{
 	void delete_task(NODE *head);
 	void modify_categ(NODE *head);
 	void delete_categ(NODE *head);
+
 
 #endif 
