@@ -1,0 +1,283 @@
+\hypertarget{list_8c}{}\section{list.\+c File Reference}
+\label{list_8c}\index{list.\+c@{list.\+c}}
+
+
+Source code for the list header file.  
+
+
+{\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{list_8c_a72270151fbd3d162bf98a82c2b23dc44}{add\+\_\+tasks} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Adds tasks from input.\+txt file to the linked list. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_ad06fe3b87c6982cd54367571ac94b4cf}{print\+\_\+all} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Prints all the nodes of the list. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_a64e2b193ad54e3cff6cf904edd922b97}{print\+\_\+by\+\_\+categ} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Prints every element that has the same category as the one entered by the user. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_aa5a939922e1387bef287e2214650a95e}{merge\+\_\+sort} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$$\ast$head\+Ref)
+\begin{DoxyCompactList}\small\item\em Merge sort function. \end{DoxyCompactList}\item 
+\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$ \hyperlink{list_8c_aac6a5845230365ff114960ef9341945f}{sorted\+\_\+merge} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$a, \hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function that merges two sublists together. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_aa79a2858d6c15f2c38ae887c9bddc4f3}{front\+\_\+back\+\_\+split} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$source, \hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$$\ast$front\+Ref, \hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$$\ast$back\+Ref)
+\begin{DoxyCompactList}\small\item\em Function that splits the list in two sublists. Splits the nodes into front and back halves and returns the two lists using pointers. If the length is odd, the extra node goes in the front list. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_a80fbc1410f19183019e441e682b40198}{delete\+\_\+task} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Function that deletes a node, based on input provided by user. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_ae56b30fd54180365c90db3b8dad9b0ef}{modify\+\_\+categ} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Function that modifies the category based on user input. \end{DoxyCompactList}\item 
+void \hyperlink{list_8c_ace3d4b37d0dd2c51cb6a48c819ced3f1}{delete\+\_\+categ} (\hyperlink{list_8h_a1ad005a5fea6e31be66b1791cb8dbf4d}{N\+O\+DE} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Function that deletes a category. It replaces the category with a blank to symbolise that it\textquotesingle{}s empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Source code for the list header file. 
+
+
+
+\subsection{Function Documentation}
+\index{list.\+c@{list.\+c}!add\+\_\+tasks@{add\+\_\+tasks}}
+\index{add\+\_\+tasks@{add\+\_\+tasks}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{add\+\_\+tasks(\+N\+O\+D\+E $\ast$head)}{add_tasks(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+tasks (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_a72270151fbd3d162bf98a82c2b23dc44}{}\label{list_8c_a72270151fbd3d162bf98a82c2b23dc44}
+
+
+Adds tasks from input.\+txt file to the linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes as parameter a pointer to the first element of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+File is opened.
+
+Prints message in case it can\textquotesingle{}t be opened.
+
+Allocates memory for new node.
+
+Saves the priority ( with 5 maximum number of digits ).
+
+Allocates memory for the category and reads it.
+
+Deletes newline character left by fgets.
+
+Allocates memory for task and reads it.
+
+If task is empty, it frees the memory allocated for the node and quits.
+
+Deletes newline character left by fgets.
+
+New node points to the first non-\/empty element.
+
+New node becomes the first non-\/empty element.
+
+Closes file.\index{list.\+c@{list.\+c}!delete\+\_\+categ@{delete\+\_\+categ}}
+\index{delete\+\_\+categ@{delete\+\_\+categ}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{delete\+\_\+categ(\+N\+O\+D\+E $\ast$head)}{delete_categ(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void delete\+\_\+categ (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_ace3d4b37d0dd2c51cb6a48c819ced3f1}{}\label{list_8c_ace3d4b37d0dd2c51cb6a48c819ced3f1}
+
+
+Function that deletes a category. It replaces the category with a blank to symbolise that it\textquotesingle{}s empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes as a parameter a pointer to the first element in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+Asks user for the category to be deleted.
+
+Goes through each node and if its category matches the one provided by the user, it is deleted ( replaced by a blank space ).\index{list.\+c@{list.\+c}!delete\+\_\+task@{delete\+\_\+task}}
+\index{delete\+\_\+task@{delete\+\_\+task}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{delete\+\_\+task(\+N\+O\+D\+E $\ast$head)}{delete_task(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void delete\+\_\+task (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_a80fbc1410f19183019e441e682b40198}{}\label{list_8c_a80fbc1410f19183019e441e682b40198}
+
+
+Function that deletes a node, based on input provided by user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes as a parameter a pointer to the first element in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+Asks user to enter a task.
+
+Prints message in case list is empty.
+
+Goes through every element and checks if its category matches the provided one. If it does, it is deleted.\index{list.\+c@{list.\+c}!front\+\_\+back\+\_\+split@{front\+\_\+back\+\_\+split}}
+\index{front\+\_\+back\+\_\+split@{front\+\_\+back\+\_\+split}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{front\+\_\+back\+\_\+split(\+N\+O\+D\+E $\ast$source, N\+O\+D\+E $\ast$$\ast$front\+Ref, N\+O\+D\+E $\ast$$\ast$back\+Ref)}{front_back_split(NODE *source, NODE **frontRef, NODE **backRef)}}]{\setlength{\rightskip}{0pt plus 5cm}void front\+\_\+back\+\_\+split (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{source, }
+\item[{{\bf N\+O\+DE} $\ast$$\ast$}]{front\+Ref, }
+\item[{{\bf N\+O\+DE} $\ast$$\ast$}]{back\+Ref}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_aa79a2858d6c15f2c38ae887c9bddc4f3}{}\label{list_8c_aa79a2858d6c15f2c38ae887c9bddc4f3}
+
+
+Function that splits the list in two sublists. Splits the nodes into front and back halves and returns the two lists using pointers. If the length is odd, the extra node goes in the front list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Pointer to the first element of the list that has to be split. \\
+\hline
+{\em front\+Ref} & Pointer to a pointer of the first sublist. \\
+\hline
+{\em back\+Ref} & Pointer to a pointer of the second sublist. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+If the list is empty or has just one element, it doesn\textquotesingle{}t split it.
+
+\textquotesingle{}fast\textquotesingle{} advances two nodes and \textquotesingle{}slow\textquotesingle{} one node.
+
+\textquotesingle{}slow\textquotesingle{} is before the midpoint in the list, so it gets split in two.\index{list.\+c@{list.\+c}!merge\+\_\+sort@{merge\+\_\+sort}}
+\index{merge\+\_\+sort@{merge\+\_\+sort}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{merge\+\_\+sort(\+N\+O\+D\+E $\ast$$\ast$head\+Ref)}{merge_sort(NODE **headRef)}}]{\setlength{\rightskip}{0pt plus 5cm}void merge\+\_\+sort (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$$\ast$}]{head\+Ref}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_aa5a939922e1387bef287e2214650a95e}{}\label{list_8c_aa5a939922e1387bef287e2214650a95e}
+
+
+Merge sort function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Ref} & Takes as a parameter a pointer to the pointer of the first element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+If list is empty or has 1 element, it quits.
+
+It else splits it into 2 sublists.
+
+Recursively sorts the sublists.
+
+Merges them together.\index{list.\+c@{list.\+c}!modify\+\_\+categ@{modify\+\_\+categ}}
+\index{modify\+\_\+categ@{modify\+\_\+categ}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{modify\+\_\+categ(\+N\+O\+D\+E $\ast$head)}{modify_categ(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void modify\+\_\+categ (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_ae56b30fd54180365c90db3b8dad9b0ef}{}\label{list_8c_ae56b30fd54180365c90db3b8dad9b0ef}
+
+
+Function that modifies the category based on user input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes as a parameter a pointer to the first element of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+Asks user to enter the category to be modified.
+
+Asks user to enter new name for the category.
+
+It goes through every element and checks if its category matches the one provided. If it does, it changes it to the new one.\index{list.\+c@{list.\+c}!print\+\_\+all@{print\+\_\+all}}
+\index{print\+\_\+all@{print\+\_\+all}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+all(\+N\+O\+D\+E $\ast$head)}{print_all(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_ad06fe3b87c6982cd54367571ac94b4cf}{}\label{list_8c_ad06fe3b87c6982cd54367571ac94b4cf}
+
+
+Prints all the nodes of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes a pointer to the first element of the list as a parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+Opens file.
+
+Prints message in case it can\textquotesingle{}t be opened and quits.
+
+Prints message in case the list is empty.
+
+Prints everything stored in each node.
+
+Closes file.\index{list.\+c@{list.\+c}!print\+\_\+by\+\_\+categ@{print\+\_\+by\+\_\+categ}}
+\index{print\+\_\+by\+\_\+categ@{print\+\_\+by\+\_\+categ}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+by\+\_\+categ(\+N\+O\+D\+E $\ast$head)}{print_by_categ(NODE *head)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+by\+\_\+categ (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_a64e2b193ad54e3cff6cf904edd922b97}{}\label{list_8c_a64e2b193ad54e3cff6cf904edd922b97}
+
+
+Prints every element that has the same category as the one entered by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Takes as a parameter a pointer to the first element of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Doesn\textquotesingle{}t return anything. 
+\end{DoxyReturn}
+Opens (or creates) output file (output.\+txt). If one already exists and it has data in it, the results will be printed after.
+
+Asks user to enter a category.
+
+Prints a message in case it can\textquotesingle{}t be opened and quits.
+
+Prints message in case list is empty.
+
+Goes through every element and checks if its category matches the one provided by the user. If it does, it gets printed.
+
+File is closed.\index{list.\+c@{list.\+c}!sorted\+\_\+merge@{sorted\+\_\+merge}}
+\index{sorted\+\_\+merge@{sorted\+\_\+merge}!list.\+c@{list.\+c}}
+\subsubsection[{\texorpdfstring{sorted\+\_\+merge(\+N\+O\+D\+E $\ast$a, N\+O\+D\+E $\ast$b)}{sorted_merge(NODE *a, NODE *b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+O\+DE}$\ast$ sorted\+\_\+merge (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+DE} $\ast$}]{a, }
+\item[{{\bf N\+O\+DE} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{list_8c_aac6a5845230365ff114960ef9341945f}{}\label{list_8c_aac6a5845230365ff114960ef9341945f}
+
+
+Function that merges two sublists together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pointer to the first sublist. \\
+\hline
+{\em b} & Pointer to the second sublist. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the now merged list. 
+\end{DoxyReturn}
+If one of them is empty, the other is returned.
+
+Based on priority, it picks a or b and recurs.
