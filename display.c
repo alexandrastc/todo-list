@@ -1,6 +1,14 @@
+/**
+* \file
+* \brief Source code for the display header file.
+*/
 #include "display.h"
 #include <stdio.h>
 
+/**
+* \brief Prints menu with choices for the user.
+* \return Doesn't return anything.
+*/
 void menu()
 {
 
