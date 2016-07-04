@@ -42,7 +42,7 @@ int main()
 				break;
 			
 			case '4':
-					MergeSort(&head);
+					merge_sort(&head);
 					printf("All sorted.\n");
 				break;
 			
@@ -53,7 +53,7 @@ int main()
 					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
-			case '6': 
+			case '6': 	
 					modify_categ(head);
 					printf("Category modified. \n");
 					menu();
