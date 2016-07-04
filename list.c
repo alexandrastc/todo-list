@@ -35,6 +35,14 @@ void add_tasks(NODE *head)
 			new_node->task = (char*)malloc(sizeof(char)*MAX_CHAR);
 			fgets(new_node->task,MAX_CHAR,fp);
 
+			if (strcmp(new_node->task," ") == 0 || strcmp(new_node->task,"\n") == 0
+				 || strcmp(new_node->task,"\0") == 0){
+
+				free(new_node);
+				break;
+
+			}
+
 			if (new_node->task[strlen(new_node->task)-1] == '\n'){
 				
 				new_node->task[strlen(new_node->task)-1] = '\0';
@@ -53,64 +61,85 @@ void add_tasks(NODE *head)
 
 void print_all(NODE *head)
 {
-	if (head->next == NULL){
-
-		printf("The list is empty.\n");
+	FILE *fp;
+	fp = fopen("output.txt","a+");
+	
+	if (fp == NULL){
+	
+		return;
 	
 	} else {
+	
+		if (head->next == NULL){
 
-		NODE *current = head;
+			printf("The list is empty.\n");
+	
+		} else {
 
-		do{
+			NODE *current = head;
 
-			current = current->next;
-			printf("Priority: %d \n", current->priority);
-			printf("Category: %s \n", current->category);
-			printf("Task: %s\n\n", current->task);
+			do{
 
-		} while (current->next != NULL);
-		printf("\n");
+				current = current->next;
+				fprintf(fp,"Priority: %d \n", current->priority);
+				fprintf(fp,"Category: %s \n", current->category);
+				fprintf(fp,"Task: %s\n\n", current->task);
+
+			} while (current->next != NULL);
+			fprintf(fp,"\n");
 		
+		}
 	}
+	fclose(fp);
 }
 
 void print_by_categ(NODE *head)
 {
+	FILE *fp;
+	fp = fopen("output.txt","a+");
 
 	char categ[MAX_CHAR];
 	printf("Please enter the category : \n");
 	fscanf(stdin," %[^\n]%*c",categ);
 
-	if (head->next == NULL){
+	if (fp == NULL){
 
-		printf("The list is empty.\n");
+		return;
 	
 	} else {
 
-		NODE *current = head;
+		if (head->next == NULL){
 
-		while (current->next != NULL){
+			fprintf(fp,"The list is empty.\n");
 		
-			if (strcmp(current->next->category,categ) == 0){
+		} else {
+
+			NODE *current = head;
+
+			while (current->next != NULL){
 			
-				current = current->next;
-				printf("Priority: %d \n", current->priority);
-				printf("Category: %s \n", current->category);
-				printf("Task: %s\n\n", current->task);
+				if (strcmp(current->next->category,categ) == 0){
+				
+					current = current->next;
+					fprintf(fp,"Priority: %d \n", current->priority);
+					fprintf(fp,"Category: %s \n", current->category);
+					fprintf(fp,"Task: %s\n\n", current->task);
+				
+				}
+
+				if (current->next != NULL){
+
+					current = current->next;
+				}
+
+			}
+			fprintf(fp,"\n");
 			
-			}
-
-			if (current->next != NULL){
-
-				current = current->next;
-			}
-
 		}
-		printf("\n");
-		
 	}
+	fclose(fp);
 }
-void MergeSort(NODE** headRef)
+void merge_sort(NODE** headRef)
 {
   	NODE* head = *headRef;
 	NODE* a;
@@ -123,17 +152,17 @@ void MergeSort(NODE** headRef)
   	}
  
  
- 	FrontBackSplit(head, &a, &b); 
+ 	front_back_split(head, &a, &b); 
  
  
-  	MergeSort(&a);
-  	MergeSort(&b);
+  	merge_sort(&a);
+  	merge_sort(&b);
  
   
-  	*headRef = SortedMerge(a, b);
+  	*headRef = sorted_merge(a, b);
 
 }
-NODE* SortedMerge(NODE* a, NODE* b)
+NODE* sorted_merge(NODE* a, NODE* b)
 {
 	NODE* result = NULL;
  
@@ -150,17 +179,17 @@ NODE* SortedMerge(NODE* a, NODE* b)
   	if (a->priority <= b->priority){
     	
     	result = a;
-     	result->next = SortedMerge(a->next, b);
+     	result->next = sorted_merge(a->next, b);
 
   	} else {
      	
      	result = b;
-     	result->next = SortedMerge(a, b->next);
+     	result->next = sorted_merge(a, b->next);
 
   	}
   	return(result);
 }
-void FrontBackSplit(NODE* source, NODE** frontRef, NODE** backRef)
+void front_back_split(NODE* source, NODE** frontRef, NODE** backRef)
 {
 	NODE* fast;
 	NODE* slow;
