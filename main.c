@@ -1,3 +1,8 @@
+/**
+* \file
+* \brief Main function
+* \return An integer 0 upon exit succes.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,18 +12,26 @@
 
 int main()
 {
-	//start node is created
+	/**
+	* Start node is created
+	*/
 
 	NODE *head = NULL;
 
-	//allocating memory for it
+	/**
+	* Allocating memory for it
+	*/
 
 	head = (NODE*) malloc(sizeof(NODE));
 
-	//"menu" displaying user's options, takes no input
-
+	/**
+	* Prints menu.
+	*/
 	menu();
 	
+	/** 
+	* User makes a choice.
+	*/
 	int choice = getchar();
 
 	while (choice != '8' ){
@@ -28,42 +41,42 @@ int main()
 			case '1':
 					 add_tasks(head);
 					 printf("Task added.\n");
+					 printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '2':
 					 print_all(head);
+					 printf("Done.\n");
+					 printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '3':
 					 print_by_categ(head);
-					 printf("Done. \n");
-					 menu();
+					 printf("Done.\n");
 					 printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '4':
 					merge_sort(&head);
 					printf("All sorted.\n");
+					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '5':
 					delete_task(head);
 					printf("Task deleted. \n");
-					menu();
 					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '6': 	
 					modify_categ(head);
 					printf("Category modified. \n");
-					menu();
 					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
 			case '7': 
 					delete_categ(head);
 					printf("Category deleted. \n");
-					menu();
 					printf("\nPlease enter your choice (1 to 8).\n");
 				break;
 			
